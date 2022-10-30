@@ -60,4 +60,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // a user can create many activities
+    public function reservations()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }
